@@ -1,8 +1,5 @@
-Dưới đây là phiên bản **README.md** được chỉnh sửa lại để **đẹp, rõ ràng, dễ đọc**, và **chuyên nghiệp hơn**, có phân chia mục, highlight code, và format chuẩn Markdown cho GitHub hoặc GitLab:
 
----
 
-````markdown
 # 🧠 Notion-mini (.NET 8)
 
 > Một ứng dụng WPF mô phỏng lại **Notion** — giúp quản lý ghi chú, workspace, và tag với cơ sở dữ liệu SQL Server.  
@@ -12,7 +9,9 @@ Dưới đây là phiên bản **README.md** được chỉnh sửa lại để 
 
 ## 🗄️ 1. Cấu hình Cơ sở dữ liệu (Database Setup)
 
-### 🧩 Tên Database
+
+### 🧩 Tên database
+
 **`NoteHubDB`**
 
 ### ⚙️ Script tạo Database
