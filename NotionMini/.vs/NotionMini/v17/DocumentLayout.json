@@ -3,16 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\models\\workspaceitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\models\\workspaceitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\workspacelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\workspacelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\editorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\editorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\pagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\pagelistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\models\\pageitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\models\\pageitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\services\\pageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\services\\ipageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\services\\ipageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\services\\workspaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\services\\workspaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\services\\iworkspaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\services\\iworkspaceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\commands\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|solutionrelative:notionmini\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C43EAEFF-1E86-4D59-B113-2FF3BA5D7E61}|NotionMini\\NotionMini.csproj|c:\\users\\pc\\desktop\\prn212\\notion-mini-.net8\\notionmini\\notionmini\\models\\notehubdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +83,162 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:12:19.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\EditorViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\EditorViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\EditorViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\EditorViewModel.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:11:18.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PageListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\PageListViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\PageListViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\PageListViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\PageListViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:10:06.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkspaceListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\WorkspaceListViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\WorkspaceListViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\WorkspaceListViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\WorkspaceListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:09:15.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PageItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\Models\\PageItemViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\Models\\PageItemViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\Models\\PageItemViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\Models\\PageItemViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:07:34.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WorkspaceItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\Models\\WorkspaceItemViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\Models\\WorkspaceItemViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\Models\\WorkspaceItemViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\Models\\WorkspaceItemViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:06:54.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PageService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\PageService.cs",
+              "RelativeDocumentMoniker": "NotionMini\\Services\\PageService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\PageService.cs",
+              "RelativeToolTip": "NotionMini\\Services\\PageService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwBIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T14:00:45.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPageService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\IPageService.cs",
+              "RelativeDocumentMoniker": "NotionMini\\Services\\IPageService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\IPageService.cs",
+              "RelativeToolTip": "NotionMini\\Services\\IPageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T13:59:23.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WorkspaceService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\WorkspaceService.cs",
+              "RelativeDocumentMoniker": "NotionMini\\Services\\WorkspaceService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\WorkspaceService.cs",
+              "RelativeToolTip": "NotionMini\\Services\\WorkspaceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T13:57:25.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IWorkspaceService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\IWorkspaceService.cs",
+              "RelativeDocumentMoniker": "NotionMini\\Services\\IWorkspaceService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Services\\IWorkspaceService.cs",
+              "RelativeToolTip": "NotionMini\\Services\\IWorkspaceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T13:56:38.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "NotionMini\\ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "NotionMini\\ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T13:55:04.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Commands\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "NotionMini\\Commands\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Commands\\RelayCommand.cs",
+              "RelativeToolTip": "NotionMini\\Commands\\RelayCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T10:27:41.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "NoteHubDbContext.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\Models\\NoteHubDbContext.cs",
               "RelativeDocumentMoniker": "NotionMini\\Models\\NoteHubDbContext.cs",
@@ -46,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\appsettings.json",
               "RelativeDocumentMoniker": "NotionMini\\appsettings.json",
@@ -54,19 +258,19 @@
               "RelativeToolTip": "NotionMini\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-14T07:04:57.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-14T07:04:57.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\MainWindow.xaml",
               "RelativeDocumentMoniker": "NotionMini\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\MainWindow.xaml",
               "RelativeToolTip": "NotionMini\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-14T05:55:41.282Z"
+              "WhenOpened": "2025-10-14T05:55:41.282Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,7 +280,7 @@
               "RelativeDocumentMoniker": "NotionMini\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\PRN212\\Notion-mini-.net8\\NotionMini\\NotionMini\\MainWindow.xaml.cs",
               "RelativeToolTip": "NotionMini\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAWwBwAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAWwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-14T05:55:38.883Z",
               "EditorCaption": ""
