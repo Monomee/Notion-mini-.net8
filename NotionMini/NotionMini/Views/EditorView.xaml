@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="NotionMini.Views.EditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Height="Auto" Width="Auto">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
+                     Width="400" Margin="0,0,8,0"/>
+            <Button Content="Pin/Unpin" Command="{Binding PinCommand}" Margin="0,0,8,0"/>
+            <Button Content="Delete Page" Command="{Binding DeleteCommand}"/>
+        </StackPanel>
+
+        <TextBox Grid.Row="1" AcceptsReturn="True" 
+                 VerticalScrollBarVisibility="Auto"
+                 Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="{Binding IsDirty, StringFormat=Dirty: {0}}" Margin="0,0,12,0"/>
+            <TextBlock Text="{Binding LastSavedAt, StringFormat=Saved: {0:HH:mm:ss}}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
