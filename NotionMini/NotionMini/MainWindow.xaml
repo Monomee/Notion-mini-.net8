@@ -5,9 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotionMini"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Notion Mini" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="242,146,0,0" VerticalAlignment="Top" Click="Button_Click" Height="91" Width="163"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <!-- Sidebar: Workspaces -->
+        <DockPanel Grid.Column="0" Margin="8">
+            <TextBlock Text="Workspaces" FontWeight="Bold" Margin="0,0,0,8"/>
+            <StackPanel>
+                <ListBox ItemsSource="{Binding WorkspaceVM.Workspaces}"
+                         SelectedItem="{Binding WorkspaceVM.Selected, Mode=TwoWay}" 
+                         DisplayMemberPath="Name" Height="480"/>
+                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                    <Button Content="+ Add" Width="80" Margin="0,0,8,0"
+                            Command="{Binding WorkspaceVM.AddWorkspaceCommand}"/>
+                    <Button Content="Delete" Width="80"
+                            Command="{Binding WorkspaceVM.DeleteWorkspaceCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Divider -->
+        <Border Grid.Column="1" Background="#DDD"/>
+
+        <!-- Main area: Pages + Editor -->
+        <Grid Grid.Column="2" Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="220"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Pages Header + Search -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBlock Text="Pages" FontWeight="Bold" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                <TextBox Width="240" Margin="0,0,8,0" 
+                         Text="{Binding PageVM.SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                         />
+                <Button Content="Search" Command="{Binding PageVM.ApplySearchCommand}" Margin="0,0,8,0"/>
+                <Button Content="+ New Page" Command="{Binding PageVM.AddPageCommand}"/>
+            </StackPanel>
+
+            <!-- Pages List -->
+            <ListBox Grid.Row="0" Margin="0,36,0,0" 
+                     ItemsSource="{Binding PageVM.Pages}"
+                     SelectedItem="{Binding PageVM.Selected, Mode=TwoWay}"
+                     DisplayMemberPath="Title"/>
+
+            <!-- Editor -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="28"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Text="{Binding EditorVM.Title, UpdateSourceTrigger=PropertyChanged}" 
+                             Width="400" Margin="0,0,8,0"/>
+                    <Button Content="Pin/Unpin" Command="{Binding PageVM.PinToggleCommand}" Margin="0,0,8,0"/>
+                    <Button Content="Delete Page" Command="{Binding PageVM.DeletePageCommand}"/>
+                </StackPanel>
+
+                <TextBox Grid.Row="1" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                         Text="{Binding EditorVM.Content, UpdateSourceTrigger=PropertyChanged}" />
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock Text="{Binding EditorVM.IsDirty, StringFormat=Dirty: {0}}"
+                               Margin="0,0,12,0"/>
+                    <TextBlock Text="{Binding EditorVM.LastSavedAt, StringFormat=Saved: {0:HH:mm:ss}}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

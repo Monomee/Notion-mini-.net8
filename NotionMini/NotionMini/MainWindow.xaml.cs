@@ -1,4 +1,6 @@
 ﻿using NotionMini.Models;
+using NotionMini.Services;
+using NotionMini.ViewModels;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,14 +21,12 @@ namespace NotionMini
     {
         public MainWindow()
         {
-            InitializeComponent();           
-        }
+            InitializeComponent();
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            using var db = new NoteHubDbContext();
-            Button btn = (Button)sender;
-            btn.Content = db.Pages.Count().ToString();
+            var vm = new MainViewModel(new WorkspaceService(), new PageService());
+            DataContext = vm;
+            _ = vm.InitializeAsync();
         }
+  
     }
 }
