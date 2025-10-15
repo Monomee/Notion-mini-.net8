@@ -10,6 +10,15 @@ namespace NotionMini.Services
 {
     public class PageService : IPageService
     {
+        public async Task<List<Page>> GetAllAsync(int workspaceId)
+        {
+            using var db = new NoteHubDbContext();
+            return await db.Pages
+                           .Where(p => p.WorkspaceId == workspaceId)
+                           .OrderByDescending(p => p.UpdatedAt)
+                           .ToListAsync();
+        }
+
         public async Task<List<Page>> GetByWorkspaceAsync(int workspaceId, string? search = null)
         {
             using var db = new NoteHubDbContext();

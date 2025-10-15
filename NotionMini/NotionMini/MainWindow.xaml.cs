@@ -23,9 +23,14 @@ namespace NotionMini
         {
             InitializeComponent();
 
-            var vm = new MainViewModel(new WorkspaceService(), new PageService());
+            //DataContext = new MainViewModel();
+            var vm = new MainViewModel();
             DataContext = vm;
-            _ = vm.InitializeAsync();
+
+            Loaded += async (s, e) =>
+            {
+                await vm.InitializeAsync();
+            };
         }
   
     }

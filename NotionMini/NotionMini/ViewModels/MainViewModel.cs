@@ -24,6 +24,12 @@ namespace NotionMini.ViewModels
         public ICommand SelectWorkspaceCommand { get; }
         public ICommand SelectPageCommand { get; }
 
+        public MainViewModel() : this(new WorkspaceService(), new PageService())
+        {
+
+        }
+    
+
         public MainViewModel(IWorkspaceService workspaceService, IPageService pageService)
         {
             _pageService = pageService;
