@@ -11,6 +11,9 @@ namespace NotionMini.ViewModels
     public class EditorViewModel: BaseViewModel
     {
         private readonly IPageService _pageService;
+        private Timer? _debounceTimer;
+        private readonly int _debounceMs = 2000; // 2s delay
+        private Page? _currentPage;
 
         private int _pageId;
         private string _title = string.Empty;
@@ -18,11 +21,12 @@ namespace NotionMini.ViewModels
         private bool _isDirty;
         private DateTime? _lastSavedAt;
 
-        // debounce
-        private Timer? _timer;
-        private readonly int _debounceMs = 1500;
+        public int PageId
+        {
+            get => _pageId;
+            private set => SetProperty(ref _pageId, value);
+        }
 
-        public int PageId { get => _pageId; private set => SetProperty(ref _pageId, value); }
         public string Title
         {
             get => _title;
@@ -32,6 +36,7 @@ namespace NotionMini.ViewModels
                     ScheduleSave();
             }
         }
+
         public string? Content
         {
             get => _content;
@@ -41,53 +46,81 @@ namespace NotionMini.ViewModels
                     ScheduleSave();
             }
         }
-        public bool IsDirty { get => _isDirty; private set => SetProperty(ref _isDirty, value); }
-        public DateTime? LastSavedAt { get => _lastSavedAt; private set => SetProperty(ref _lastSavedAt, value); }
+
+        public bool IsDirty
+        {
+            get => _isDirty;
+            private set => SetProperty(ref _isDirty, value);
+        }
+
+        public DateTime? LastSavedAt
+        {
+            get => _lastSavedAt;
+            private set => SetProperty(ref _lastSavedAt, value);
+        }
 
         public EditorViewModel(IPageService pageService)
         {
             _pageService = pageService;
         }
 
-        public async Task LoadAsync(int pageId)
+        public void LoadPage(Page page)
         {
-            var p = await _pageService.GetByIdAsync(pageId);
-            if (p == null) return;
-            PageId = p.PageId;
-            Title = p.Title;
-            Content = p.Content;
+            _currentPage = page;
+            PageId = page.PageId;
+            Title = page.Title;
+            Content = page.Content;
+            LastSavedAt = page.UpdatedAt ?? page.CreatedAt ?? DateTime.Now;
             IsDirty = false;
-            LastSavedAt = p.UpdatedAt ?? p.CreatedAt;
         }
 
         private void ScheduleSave()
         {
+            if (_currentPage == null) return;
+
             IsDirty = true;
-            _timer?.Dispose();
-            _timer = new Timer(async _ => await SaveAsync(), null, _debounceMs, Timeout.Infinite);
+            _debounceTimer?.Dispose();
+            _debounceTimer = new Timer(async _ => await SaveAsync(),
+                                       null,
+                                       _debounceMs,
+                                       Timeout.Infinite);
         }
 
         private async Task SaveAsync()
         {
             try
             {
-                var p = new Page
-                {
-                    PageId = PageId,
-                    Title = string.IsNullOrWhiteSpace(Title) ? "Untitled" : Title.Trim(),
-                    Content = Content,
-                    IsPinned = null // giữ nguyên trong service
-                };
-                await _pageService.UpdateAsync(p);
+                if (_currentPage == null) return;
+
+                _currentPage.Title = string.IsNullOrWhiteSpace(Title) ? "Untitled" : Title.Trim();
+                _currentPage.Content = Content;
+                _currentPage.UpdatedAt = DateTime.Now;
+
+                await _pageService.UpdateAsync(_currentPage);
+
                 IsDirty = false;
-                LastSavedAt = DateTime.Now;
+                LastSavedAt = _currentPage.UpdatedAt.Value;
                 Raise(nameof(LastSavedAt));
             }
             catch
             {
-                // ở bản skeleton ta bỏ qua toast/log, sẽ thêm ở polish phase
+                // Có thể log hoặc hiển thị thông báo nếu cần
                 IsDirty = true;
             }
         }
+        public async Task LoadAsync(int pageId)
+        {
+            var p = await _pageService.GetByIdAsync(pageId);
+            if (p != null)
+            {
+                _currentPage = p;
+                PageId = p.PageId;
+                Title = p.Title;
+                Content = p.Content;
+                LastSavedAt = p.UpdatedAt ?? p.CreatedAt ?? DateTime.Now;
+                IsDirty = false;
+            }
+        }
+
     }
 }

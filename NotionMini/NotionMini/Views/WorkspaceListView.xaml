@@ -5,19 +5,62 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Height="Auto" Width="Auto">
-    <DockPanel Margin="8">
-        <TextBlock Text="Workspaces" FontWeight="Bold" Margin="0,0,0,8"/>
-        <StackPanel>
-            <ListBox ItemsSource="{Binding Workspaces}"
-                     SelectedItem="{Binding Selected, Mode=TwoWay}"
-                     DisplayMemberPath="Name"
-                     Height="480"/>
-            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                <Button Content="+ Add" Width="80" Margin="0,0,8,0"
-                        Command="{Binding AddWorkspaceCommand}"/>
-                <Button Content="Delete" Width="80"
-                        Command="{Binding DeleteWorkspaceCommand}"/>
-            </StackPanel>
+
+    <DockPanel>
+        <!-- Header -->
+        <StackPanel DockPanel.Dock="Top" Margin="0,0,0,16">
+            <TextBlock Text="Workspaces" Style="{StaticResource HeaderTextStyle}"/>
+            <TextBlock Text="Manage your workspaces" Style="{StaticResource BodyTextStyle}" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <!-- Workspace List -->
+        <ListBox ItemsSource="{Binding Workspaces}"
+                 SelectedItem="{Binding Selected, Mode=TwoWay}"
+                 Style="{StaticResource ModernListBoxStyle}"
+                 Margin="0,0,0,16">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource ModernListBoxItemStyle}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border x:Name="Bd" 
+                                        Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Margin="0,1"
+                                        Padding="12,10">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="📁" FontSize="16" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                        <TextBlock Text="{Binding Name}" 
+                                                 Style="{StaticResource SubHeaderTextStyle}"
+                                                 VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="{StaticResource HoverColor}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="{StaticResource SelectedColor}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <!-- Action Buttons -->
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Stretch">
+            <Button Content="+ Add Workspace" 
+                    Style="{StaticResource AnimatedButtonStyle}"
+                    Command="{Binding AddWorkspaceCommand}"
+                    Margin="0,0,8,0"
+                    HorizontalAlignment="Stretch"/>
+            <Button Content="🗑️ Delete" 
+                    Style="{StaticResource AnimatedButtonStyle}"
+                    Command="{Binding DeleteWorkspaceCommand}"
+                    HorizontalAlignment="Stretch"/>
         </StackPanel>
     </DockPanel>
 </UserControl>

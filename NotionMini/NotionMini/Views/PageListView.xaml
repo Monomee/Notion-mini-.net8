@@ -5,18 +5,142 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Height="Auto" Width="Auto">
-    <DockPanel Margin="8">
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <TextBlock Text="Pages" FontWeight="Bold" Margin="0,0,12,0" VerticalAlignment="Center"/>
-            <TextBox Width="200" Margin="0,0,8,0"
-                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="Search" Command="{Binding ApplySearchCommand}" Margin="0,0,8,0"/>
-            <Button Content="+ New Page" Command="{Binding AddPageCommand}"/>
+
+    <DockPanel>
+        <!-- Header -->
+        <StackPanel DockPanel.Dock="Top" Margin="0,0,0,16">
+            <TextBlock Text="Pages" Style="{StaticResource HeaderTextStyle}"/>
+            <TextBlock Text="Browse and manage your pages" Style="{StaticResource BodyTextStyle}" Margin="0,4,0,0"/>
         </StackPanel>
 
-        <ListBox ItemsSource="{Binding Pages}"
+        <!-- Search and Actions -->
+        <StackPanel DockPanel.Dock="Top" Margin="0,0,0,16">
+            <!-- Search Box -->
+            <Border Background="{StaticResource SurfaceColor}" 
+                    CornerRadius="8" 
+                    BorderThickness="1" 
+                    BorderBrush="{StaticResource BorderColor}"
+                    Margin="0,0,0,12">
+                <StackPanel Orientation="Horizontal" Margin="12,8">
+                    <TextBlock Text="🔍" FontSize="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                             BorderThickness="0"
+                             Background="Transparent"
+                             Margin="0">
+                        <TextBox.Style>
+                            <Style TargetType="TextBox" BasedOn="{StaticResource ModernTextBoxStyle}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TextBox">
+                                            <Border Background="{TemplateBinding Background}" 
+                                                    CornerRadius="6"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    BorderBrush="{TemplateBinding BorderBrush}">
+                                                <Grid>
+                                                    <ScrollViewer x:Name="PART_ContentHost" 
+                                                                Margin="{TemplateBinding Padding}"
+                                                                VerticalAlignment="Center"/>
+                                                    <TextBlock Text="Search pages..." 
+                                                              Foreground="{StaticResource TextSecondaryColor}"
+                                                              Margin="{TemplateBinding Padding}"
+                                                              VerticalAlignment="Center"
+                                                              IsHitTestVisible="False">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </Grid>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </StackPanel>
+            </Border>
+
+            <!-- Action Buttons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Button Content="+ New Page" 
+                        Style="{StaticResource AnimatedButtonStyle}"
+                        Command="{Binding AddPageCommand}"
+                        Margin="0,0,8,0"
+                        HorizontalAlignment="Stretch"/>
+                <Button Content="📌 Pin/Unpin" 
+                        Style="{StaticResource AnimatedButtonStyle}"
+                        Command="{Binding PinToggleCommand}"
+                        Margin="0,0,8,0"
+                        HorizontalAlignment="Stretch"/>
+                <Button Content="🗑️ Delete" 
+                        Style="{StaticResource AnimatedButtonStyle}"
+                        Command="{Binding DeletePageCommand}"
+                        HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Page List -->
+        <ListBox ItemsSource="{Binding FilteredPages}"
                  SelectedItem="{Binding Selected, Mode=TwoWay}"
-                 DisplayMemberPath="Title"
-                 Margin="0,8,0,0"/>
+                 Style="{StaticResource ModernListBoxStyle}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" BasedOn="{StaticResource ModernListBoxItemStyle}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border x:Name="Bd" 
+                                        Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Margin="0,1"
+                                        Padding="12,10">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="📄" FontSize="14" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Title}" 
+                                                     Style="{StaticResource SubHeaderTextStyle}"
+                                                     VerticalAlignment="Center"
+                                                     TextTrimming="CharacterEllipsis"/>
+                                            <TextBlock Text="📌" 
+                                                     FontSize="12" 
+                                                     Margin="4,0,0,0" 
+                                                     VerticalAlignment="Center">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsPinned}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding CreatedAt, StringFormat='Created: {0:MMM dd, yyyy}'}" 
+                                                 Style="{StaticResource BodyTextStyle}"
+                                                 Margin="20,2,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="{StaticResource HoverColor}"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Bd" Property="Background" Value="{StaticResource SelectedColor}"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
     </DockPanel>
 </UserControl>
