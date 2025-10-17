@@ -76,5 +76,6 @@ namespace NotionMini.ViewModels
             if (p == null) return;
             await EditorVM.LoadAsync(p.PageId);
         }
+
     }
 }

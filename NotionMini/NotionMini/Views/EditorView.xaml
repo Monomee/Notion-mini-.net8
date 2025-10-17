@@ -5,27 +5,130 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Height="Auto" Width="Auto">
-    <Grid Margin="8">
+
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="28"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal">
-            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
-                     Width="400" Margin="0,0,8,0"/>
-            <Button Content="Pin/Unpin" Command="{Binding PinCommand}" Margin="0,0,8,0"/>
-            <Button Content="Delete Page" Command="{Binding DeleteCommand}"/>
+        <!-- Title Section -->
+        <Border Grid.Row="0" Background="{StaticResource SurfaceColor}" 
+                CornerRadius="8" 
+                BorderThickness="1" 
+                BorderBrush="{StaticResource BorderColor}"
+                Margin="0,0,0,16">
+            <StackPanel Orientation="Horizontal" Margin="16,12">
+                <TextBlock Text="📝" FontSize="16" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         FontSize="18"
+                         FontWeight="SemiBold"
+                         Margin="0">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox" BasedOn="{StaticResource ModernTextBoxStyle}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TextBox">
+                                        <Border Background="{TemplateBinding Background}" 
+                                                CornerRadius="6"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                BorderBrush="{TemplateBinding BorderBrush}">
+                                            <Grid>
+                                                <ScrollViewer x:Name="PART_ContentHost" 
+                                                            Margin="{TemplateBinding Padding}"
+                                                            VerticalAlignment="Center"/>
+                                                <TextBlock Text="Untitled Page" 
+                                                          Foreground="{StaticResource TextSecondaryColor}"
+                                                          Margin="{TemplateBinding Padding}"
+                                                          VerticalAlignment="Center"
+                                                          IsHitTestVisible="False">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource TemplatedParent}}" Value="">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Grid>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </StackPanel>
+        </Border>
+
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,16">
+            <Button Content="📌 Pin/Unpin" 
+                    Style="{StaticResource AnimatedButtonStyle}"
+                    Command="{Binding PinCommand}"
+                    Margin="0,0,8,0"/>
+            <Button Content="🗑️ Delete Page" 
+                    Style="{StaticResource AnimatedButtonStyle}"
+                    Command="{Binding DeleteCommand}"
+                    Margin="0,0,8,0"/>
+            <Button Content="💾 Save" 
+                    Style="{StaticResource AnimatedButtonStyle}"
+                    Command="{Binding SaveCommand}"
+                    Margin="0,0,8,0"/>
         </StackPanel>
 
-        <TextBox Grid.Row="1" AcceptsReturn="True" 
-                 VerticalScrollBarVisibility="Auto"
-                 Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}" />
+        <!-- Content Editor -->
+        <Border Grid.Row="2" Background="{StaticResource BackgroundColor}" 
+                CornerRadius="8" 
+                BorderThickness="1" 
+                BorderBrush="{StaticResource BorderColor}"
+                Margin="0,0,0,16">
+            <TextBox AcceptsReturn="True" 
+                     AcceptsTab="True"
+                     VerticalScrollBarVisibility="Auto"
+                     HorizontalScrollBarVisibility="Auto"
+                     Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource ModernTextBoxStyle}"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     FontFamily="Segoe UI"
+                     FontSize="14"
+                     Padding="20"
+                     TextWrapping="Wrap"/>
+        </Border>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <TextBlock Text="{Binding IsDirty, StringFormat=Dirty: {0}}" Margin="0,0,12,0"/>
-            <TextBlock Text="{Binding LastSavedAt, StringFormat=Saved: {0:HH:mm:ss}}"/>
-        </StackPanel>
+        <!-- Status Bar -->
+        <Border Grid.Row="3" Background="{StaticResource SurfaceColor}" 
+                CornerRadius="6" 
+                Padding="12,8">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Border CornerRadius="4" 
+                        Padding="6,2" 
+                        Margin="0,0,12,0">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="Background" Value="{StaticResource SuccessColor}"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsDirty}" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource WarningColor}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                    <TextBlock Text="{Binding IsDirty, StringFormat=Dirty: {0}}" 
+                             Style="{StaticResource BodyTextStyle}"
+                             Foreground="White"/>
+                </Border>
+                <TextBlock Text="{Binding LastSavedAt, StringFormat=Last saved: {0:HH:mm:ss}}" 
+                         Style="{StaticResource BodyTextStyle}"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

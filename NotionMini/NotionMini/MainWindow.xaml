@@ -5,26 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:NotionMini.Views"
         mc:Ignorable="d"
-        Title="Notion Mini" Height="650" Width="1000"
-        WindowStartupLocation="CenterScreen">
+        Title="Notion Mini" Height="700" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundColor}">
+    
+    <Window.Resources>
+        <!-- Window-specific styles -->
+        <Style x:Key="DividerStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource BorderColor}"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
-            <ColumnDefinition Width="2"/>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="280" MinWidth="200"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="320" MinWidth="250"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" MinWidth="400"/>
         </Grid.ColumnDefinitions>
 
         <!-- Sidebar: Workspaces -->
-        <views:WorkspaceListView Grid.Column="0" DataContext="{Binding WorkspaceVM}" />
+        <Border Grid.Column="0" Style="{StaticResource CardStyle}" Margin="12,12,6,12">
+            <views:WorkspaceListView DataContext="{Binding WorkspaceVM}" />
+        </Border>
 
-        <!-- Divider -->
-        <Border Grid.Column="1" Background="#DDD"/>
+        <!-- Divider 1 -->
+        <Border Grid.Column="1" Style="{StaticResource DividerStyle}" Width="1"/>
 
         <!-- Pages -->
-        <views:PageListView Grid.Column="2" DataContext="{Binding PageVM}" />
+        <Border Grid.Column="2" Style="{StaticResource CardStyle}" Margin="6,12,6,12">
+            <views:PageListView DataContext="{Binding PageVM}" />
+        </Border>
+
+        <!-- Divider 2 -->
+        <Border Grid.Column="3" Style="{StaticResource DividerStyle}" Width="1"/>
 
         <!-- Editor -->
-        <views:EditorView Grid.Column="3" DataContext="{Binding EditorVM}" />
+        <Border Grid.Column="4" Style="{StaticResource CardStyle}" Margin="6,12,12,12">
+            <views:EditorView DataContext="{Binding EditorVM}" />
+        </Border>
     </Grid>
 </Window>
