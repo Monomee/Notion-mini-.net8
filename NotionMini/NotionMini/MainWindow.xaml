@@ -8,7 +8,7 @@
         Title="Notion Mini" Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BackgroundColor}">
-    
+
     <Window.Resources>
         <!-- Window-specific styles -->
         <Style x:Key="DividerStyle" TargetType="Border">
@@ -19,11 +19,11 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="280" MinWidth="200"/>
+            <ColumnDefinition Width="1*" MinWidth="200"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="320" MinWidth="250"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*" MinWidth="400"/>
+            <ColumnDefinition Width="1*" MinWidth="250"/>
+            <ColumnDefinition Width="Auto" MinWidth="8"/>
+            <ColumnDefinition Width="2*" MinWidth="400"/>
         </Grid.ColumnDefinitions>
 
         <!-- Sidebar: Workspaces -->
@@ -32,7 +32,7 @@
         </Border>
 
         <!-- Divider 1 -->
-        <Border Grid.Column="1" Style="{StaticResource DividerStyle}" Width="1"/>
+        <Border Grid.Column="1" Style="{StaticResource DividerStyle}" Grid.ColumnSpan="2" Margin="0,0,319,0"/>
 
         <!-- Pages -->
         <Border Grid.Column="2" Style="{StaticResource CardStyle}" Margin="6,12,6,12">
@@ -40,7 +40,7 @@
         </Border>
 
         <!-- Divider 2 -->
-        <Border Grid.Column="3" Style="{StaticResource DividerStyle}" Width="1"/>
+        <Border Grid.Column="3" Style="{StaticResource DividerStyle}" Margin="4,0,4,0"/>
 
         <!-- Editor -->
         <Border Grid.Column="4" Style="{StaticResource CardStyle}" Margin="6,12,12,12">
